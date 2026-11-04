@@ -234,7 +234,7 @@
     // =========================================================================
     // TEMPELKAN URL APPSCRIPT ANDA DI SINI
     // =========================================================================
-    const GOOGLE_APPS_SCRIPT_URL = "PASTE_URL_WEB_APP_ANDA_DI_SINI";
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyoX9klTF-vpHYw5h8mak993U7zCsgZH_AWiKKNZdb9ZzcUrCCet_Es-aoxNCO7Egc/exec";
 
     // DATA MATERI TERHUBUNG DENGAN DOKUMEN REFERENSI
     const materiList = [
@@ -295,7 +295,7 @@
     async function submitRefleksi(e) {
       e.preventDefault();
       
-      if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbyUJ6Y57KNUvezMMypF4sGRU-59rCj5P3shNZiaWnbYVWCegHZE-91ScObLhY358bfQ/exec") {
+      if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL === "PASTE_URL_WEB_APP_ANDA_DI_SINI") {
         alert("PERHATIAN: URL Google Apps Script belum dipasang! Ganti variabel 'GOOGLE_APPS_SCRIPT_URL' di dalam kode script dengan URL Web App Anda.");
         return;
       }
