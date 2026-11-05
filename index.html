@@ -3,39 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelatihan GPK Parigi Moutong</title>
+  <title>Pelatihan Guru Pembimbing Khusus (GPK) - Parigi Moutong</title>
   <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    
-    /* Animasi Subtle */
+
+    /* Animasi Animatif & Inklusif */
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.05); }
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.08); }
     }
     .animate-glow {
-      animation: pulseGlow 6s infinite ease-in-out;
+      animation: pulseGlow 7s infinite ease-in-out;
     }
+    
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float {
+      animation: floatCard 4s infinite ease-in-out;
+    }
+
     .custom-scrollbar::-webkit-scrollbar { width: 6px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #059669; border-radius: 4px; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
 
-  <!-- HEADER NAVBAR TEMA HIJAU -->
+  <!-- HEADER NAVBAR INKLUSIF -->
   <header class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center space-x-3 cursor-pointer" onclick="showPage('landing')">
-        <div class="bg-emerald-500 p-2.5 rounded-xl shadow-lg shadow-emerald-500/30">
+        <div class="bg-emerald-500 p-2.5 rounded-2xl shadow-lg shadow-emerald-500/30 flex items-center justify-center">
           <i data-lucide="graduation-cap" class="w-7 h-7 text-white"></i>
         </div>
         <div>
           <h1 class="font-bold text-lg leading-tight tracking-wide">Pelatihan GPK</h1>
-          <p class="text-xs text-emerald-200 font-medium">Jenjang TK & SD Parigi Moutong</p>
+          <p class="text-xs text-emerald-200 font-medium">TK & SD Parigi Moutong</p>
         </div>
       </div>
 
@@ -50,7 +59,7 @@
           <span>Materi</span>
         </button>
         <button onclick="showPage('refleksi')" class="px-4 py-2 rounded-xl text-sm font-semibold transition hover:bg-white/10 flex items-center space-x-2">
-          <i data-lucide="message-square-heart" class="w-4 h-4"></i>
+          <i data-lucide="heart-handshake" class="w-4 h-4"></i>
           <span>Refleksi</span>
         </button>
       </nav>
@@ -60,11 +69,11 @@
   <!-- CONTENT MAIN -->
   <main class="flex-1 flex flex-col">
 
-    <!-- 1. LANDING PAGE (HANYA ADA TOMBOL BULAT MULAI) -->
+    <!-- 1. LANDING PAGE (DENGAN TOMBOL MULAI) -->
     <section id="landingPage" class="flex-1 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 text-white py-16 px-4">
       <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]"></div>
       
-      <!-- Ambient Glow Green -->
+      <!-- Ambient Light Background -->
       <div class="absolute w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-glow pointer-events-none"></div>
 
       <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
@@ -76,12 +85,12 @@
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
           Pendidikan Inklusif <br>
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200">
-            Ramah Anak & Berkelanjutan
+            Ramah, Aksesibel & Berkelanjutan
           </span>
         </h1>
 
         <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-          Portal kegiatan pelatihan Guru Pembimbing Khusus (GPK) jenjang TK dan SD Kabupaten Parigi Moutong.
+          Portal resmi kegiatan pelatihan penyiapan Guru Pembimbing Khusus (GPK) jenjang TK dan SD Kabupaten Parigi Moutong.
         </p>
 
         <!-- Tombol Utama Mulai -->
@@ -94,11 +103,11 @@
       </div>
     </section>
 
-    <!-- 2. HALAMAN MEMILIH MENU (MATERI ATAU REFLEKSI) -->
+    <!-- 2. HALAMAN PILIHAN MENU MAIN -->
     <section id="menuPage" class="hidden flex-1 max-w-5xl mx-auto w-full px-4 py-16">
       <div class="text-center space-y-3 mb-12">
-        <h2 class="text-3xl font-bold text-slate-800">Pilih Menu Pelatihan</h2>
-        <p class="text-slate-500">Silakan pilih menu di bawah ini untuk mengakses modul atau mengisi refleksi kegiatan.</p>
+        <h2 class="text-3xl font-bold text-slate-800">Pilih Menu Kegiatan</h2>
+        <p class="text-slate-500">Silakan pilih menu di bawah ini untuk memulai akses modul materi atau pengisian jurnal refleksi.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -108,7 +117,7 @@
             <i data-lucide="book-open" class="w-10 h-10"></i>
           </div>
           <h3 class="text-2xl font-bold text-slate-800">Materi Pelatihan</h3>
-          <p class="text-slate-500 text-sm">Akses 9 modul materi lengkap (Kebijakan Inklusif, PPI, Aplikasi PBS, & Prompt AI).</p>
+          <p class="text-slate-500 text-sm">Akses modul pembelajaran inklusif, panduan aplikasi PBS, pembuatan PPI berbasis AI, dan kumpulan referensi.</p>
           <span class="inline-flex items-center text-emerald-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
             Buka Modul Materi <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
           </span>
@@ -117,10 +126,10 @@
         <!-- Card Menu Refleksi -->
         <div onclick="showPage('refleksi')" class="group p-8 rounded-3xl bg-white border border-emerald-100 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 cursor-pointer flex flex-col items-center text-center space-y-4 hover:-translate-y-1">
           <div class="w-20 h-20 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 shadow-inner">
-            <i data-lucide="message-square-heart" class="w-10 h-10"></i>
+            <i data-lucide="heart-handshake" class="w-10 h-10"></i>
           </div>
           <h3 class="text-2xl font-bold text-slate-800">Refleksi Pembelajaran</h3>
-          <p class="text-slate-500 text-sm">Isi jurnal refleksi harian dan masukan kegiatan yang tersimpan ke Google Sheets.</p>
+          <p class="text-slate-500 text-sm">Isi lembar refleksi harian dan rencana aksi yang akan terhubung langsung ke Google Sheets panitia.</p>
           <span class="inline-flex items-center text-teal-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
             Isi Lembar Refleksi <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
           </span>
@@ -128,7 +137,7 @@
       </div>
     </section>
 
-    <!-- 3. HALAMAN MATERI PELATIHAN -->
+    <!-- 3. HALAMAN MODUL MATERI -->
     <section id="materiPage" class="hidden flex-1 max-w-7xl mx-auto w-full px-4 py-8">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
@@ -160,11 +169,11 @@
         <div class="border-b border-slate-100 pb-4">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold mb-2">
             <i data-lucide="database" class="w-3.5 h-3.5"></i>
-            <span>Integrasi Real-time Google Sheets</span>
+            <span>Integrasi Otomatis Google Sheets</span>
           </div>
           <h2 class="text-2xl font-bold text-slate-800">Form Refleksi Pembelajaran</h2>
           <p class="text-sm text-slate-500 mt-1">
-            Isikan hasil evaluasi dan pemahaman materi Anda selama mengikuti kegiatan pelatihan.
+            Isikan pemahaman materi dan rencana aksi Anda. Data akan langsung tersimpan di spreadsheet panitia.
           </p>
         </div>
 
@@ -190,30 +199,30 @@
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kecamatan</label>
-              <input type="text" id="refKecamatan" required placeholder="Contoh: Parigi Moutong" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+              <input type="text" id="refKecamatan" required placeholder="Contoh: Parigi" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Poin Utama yang Dipahami</label>
-            <textarea id="refPemahaman" rows="3" required placeholder="Tuliskan materi atau konsep baru yang sudah Anda kuasai..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+            <textarea id="refPemahaman" rows="3" required placeholder="Tuliskan pemahaman atau wawasan baru yang Anda dapatkan..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Rencana Aksi / Penerapan di Sekolah</label>
-            <textarea id="refRencana" rows="3" required placeholder="Rencana implementasi Layanan GPK atau penyusunan PPI..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+            <textarea id="refRencana" rows="3" required placeholder="Apa rencana tindakan nyata yang akan Anda terapkan di sekolah?" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Masukan / Saran Kegiatan</label>
-            <textarea id="refSaran" rows="2" placeholder="Saran untuk peningkatan kualitas pelatihan..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+            <textarea id="refSaran" rows="2" placeholder="Saran untuk perbaikan atau peningkatan pelatihan..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Rating Evaluasi Pelatihan</label>
             <select id="refRating" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-white">
-              <option value="5">⭐⭐⭐⭐⭐ (Sangat Memuaskan)</option>
-              <option value="4">⭐⭐⭐⭐ (Memuaskan)</option>
+              <option value="5">⭐⭐⭐⭐⭐ (Sangat Baik)</option>
+              <option value="4">⭐⭐⭐⭐ (Baik)</option>
               <option value="3">⭐⭐⭐ (Cukup)</option>
               <option value="2">⭐⭐ (Kurang)</option>
               <option value="1">⭐ (Sangat Kurang)</option>
@@ -232,11 +241,11 @@
 
   <script>
     // =========================================================================
-    // TEMPELKAN URL APPSCRIPT ANDA DI SINI
+    // SEMATKAN URL APPSCRIPT HASIL DEPLOY ANDA DI SINI
     // =========================================================================
-    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyoX9klTF-vpHYw5h8mak993U7zCsgZH_AWiKKNZdb9ZzcUrCCet_Es-aoxNCO7Egc/exec";
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCJnVzHy7-cgwrbZpc7_09l80T6xnvXi1W6Ch4ysoTn_rx6J8HNyS-HZzWcc_hw-I/exec";
 
-    // DATA MATERI TERHUBUNG DENGAN DOKUMEN REFERENSI
+    // DATA MATERI TERHUBUNG DENGAN SELURUH MODUL PELATIHAN
     const materiList = [
       { id: 1, title: "Konsep dan Kebijakan Pendidikan Inklusif", type: "Canva Presentation", url: "https://canva.link/y9cncfgeepyfcxu" },
       { id: 2, title: "Peran dan Tugas GPK", type: "Canva Presentation", url: "https://canva.link/423sjc6edr6bumv" },
@@ -245,8 +254,10 @@
       { id: 5, title: "Dukungan Intensif PDPD", type: "Canva Presentation", url: "https://canva.link/zqrog2v9x5xh1fw" },
       { id: 6, title: "Memahami Perilaku PDPD", type: "Canva Presentation", url: "https://canva.link/y2qg4229g6gotwu" },
       { id: 7, title: "Menyusun PPI (Program Pembelajaran Individual)", type: "Canva Presentation", url: "https://canva.link/lk4xdjmc5nsy14q" },
-      { id: 8, title: "Prompt Pembuatan PPI lewat KA", type: "Google Docs", url: "https://docs.google.com/document/d/1zhVVyvrS4NvzAdZm2NIzWVQVTht6ph-Y/edit?usp=drive_link&ouid=109349127435393462591&rtpof=true&sd=true" },
-      { id: 9, title: "Contoh Kumpulan PPI", type: "Google Drive Folder", url: "https://drive.google.com/drive/folders/1sG5_cm1ONzPUReqeMqrAf71cjnRuiWr6?usp=sharing" }
+      { id: 8, title: "Prompt Pembuatan PPI lewat KA", type: "Google Docs", url: "https://docs.google.com/document/d/1zhVVyvrS4NvzAdZm2NIzWVQVTht6ph-Y/edit?usp=drive_link" },
+      { id: 9, title: "Contoh Kumpulan PPI", type: "Google Drive Folder", url: "https://drive.google.com/drive/folders/1sG5_cm1ONzPUReqeMqrAf71cjnRuiWr6?usp=sharing" },
+      { id: 10, title: "Anak Berkebutuhan Khusus (ABK): Definisi, Hambatan, dan Strategi Pembelajaran", type: "Canva Presentation", url: "https://canva.link/m5uffg01ihipcpg" },
+      { id: 11, title: "Inti Penilaian untuk Anak Berkebutuhan Khusus dalam Praktik Pendidikan Inklusif", type: "Canva Presentation", url: "https://canva.link/mpi7qow50n8t0ro" }
     ];
 
     // NAVIGASI HALAMAN
@@ -266,7 +277,7 @@
       window.scrollTo(0, 0);
     }
 
-    // RENDER MATERI
+    // RENDER CARDS MATERI
     function renderMateri(list) {
       const container = document.getElementById('materiContainer');
       container.innerHTML = list.map(item => `
@@ -284,19 +295,19 @@
       lucide.createIcons();
     }
 
-    // FILTER MATERI
+    // FILTER MATERI PENCARIAN
     function filterMateri() {
       const keyword = document.getElementById('searchInput').value.toLowerCase();
       const filtered = materiList.filter(m => m.title.toLowerCase().includes(keyword));
       renderMateri(filtered);
     }
 
-    // KIRIM DATA REFLEKSI KE APPSCRIPT
+    // PENGIRIMAN FORM REFLEKSI KE APPSCRIPT
     async function submitRefleksi(e) {
       e.preventDefault();
       
       if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL === "PASTE_URL_WEB_APP_ANDA_DI_SINI") {
-        alert("PERHATIAN: URL Google Apps Script belum dipasang! Ganti variabel 'GOOGLE_APPS_SCRIPT_URL' di dalam kode script dengan URL Web App Anda.");
+        alert("PERHATIAN: URL Google Apps Script belum disematkan! Gantikan variabel 'GOOGLE_APPS_SCRIPT_URL' di dalam kode index.html dengan URL Web App Anda.");
         return;
       }
 
@@ -324,7 +335,7 @@
           body: JSON.stringify(payload)
         });
 
-        alert("Refleksi Anda berhasil dikirim dan tersimpan di Google Sheet!");
+        alert("Terima kasih! Data refleksi Anda telah berhasil tersimpan di Google Sheets.");
         document.getElementById('refleksiForm').reset();
       } catch (err) {
         alert("Gagal mengirim data: " + err.message);
@@ -335,7 +346,7 @@
       }
     }
 
-    // Inisialisasi awal
+    // Inisialisasi Ikon awal
     lucide.createIcons();
   </script>
 </body>
